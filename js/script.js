@@ -153,13 +153,13 @@ function cardMarketDetails(cardObject){
 	var cardPrice = "Average Price: ";
 
 	if (cardObject.digital == true && cardObject.prices.tix != null){
-		cardPrice = cardPrice + cardObject.prices.tix + " TIX"
+		cardPrice = cardPrice + cardObject.prices.tix + " TIX";
 	}
 	else if(cardObject.prices.eur != null){
 		cardPrice = cardPrice +	"€" + cardObject.prices.eur;
 	}
 	else if (cardObject.prices.eur_foil != null){
-		cardPrice = cardPrice + "€" + cardObject.prices.eur_foil
+		cardPrice = cardPrice + "€" + cardObject.prices.eur_foil + " ✦";
 	}
 	else{
 		cardPrice = cardPrice + "unknown";
