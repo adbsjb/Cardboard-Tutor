@@ -149,12 +149,21 @@ function cardMarketDetails(cardObject){
 		$('#mcm_link')[0].innerHTML = "on Magic Card Market";
 	}
 	
-	if(cardObject.prices != null){
-		$('#averagePrice')[0].innerHTML = "Average Price: €" + 	cardObject.prices.eur;			
+	//get cardmarket prices from scryfall
+	var cardPrice = "Average Price: €";
+
+	if(cardObject.prices.eur != null){
+		cardPrice = cardPrice +	cardObject.prices.eur;
+	}
+	else if (cardObject.prices.eur_foil != null){
+		cardPrice = cardPrice + cardObject.prices.eur_foil
 	}
 	else{
-		$('#averagePrice')[0].innerHTML = "";
+		cardPrice = "unknown";
 	}
+
+	$('#averagePrice')[0].innerHTML = cardPrice;
+
 }
 
 function edhRecDetails(cardObject){

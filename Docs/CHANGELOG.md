@@ -1,3 +1,7 @@
+# v1.10 - Price update edition
+Fixed prices to show when card is only printed in foil
+
+
 # v1.9 - Modal DFC edition
 Added support for [modal DFCs](https://magic.wizards.com/en/articles/archive/feature/zendikar-rising-mechanics-2020-09-01)
 
