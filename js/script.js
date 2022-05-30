@@ -150,16 +150,19 @@ function cardMarketDetails(cardObject){
 	}
 	
 	//get cardmarket prices from scryfall
-	var cardPrice = "Average Price: €";
+	var cardPrice = "Average Price: ";
 
-	if(cardObject.prices.eur != null){
-		cardPrice = cardPrice +	cardObject.prices.eur;
+	if (cardObject.digital == true){
+		cardPrice = cardPrice + cardObject.prices.tix + " tix"
+	}
+	else if(cardObject.prices.eur != null){
+		cardPrice = cardPrice +	"€" + cardObject.prices.eur;
 	}
 	else if (cardObject.prices.eur_foil != null){
-		cardPrice = cardPrice + cardObject.prices.eur_foil
+		cardPrice = cardPrice + "€" + cardObject.prices.eur_foil
 	}
 	else{
-		cardPrice = "unknown";
+		cardPrice = cardPrice + "unknown";
 	}
 
 	$('#averagePrice')[0].innerHTML = cardPrice;
