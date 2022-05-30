@@ -152,8 +152,8 @@ function cardMarketDetails(cardObject){
 	//get cardmarket prices from scryfall
 	var cardPrice = "Average Price: ";
 
-	if (cardObject.digital == true){
-		cardPrice = cardPrice + cardObject.prices.tix + " tix"
+	if (cardObject.digital == true && cardObject.prices.tix != null){
+		cardPrice = cardPrice + cardObject.prices.tix + " TIX"
 	}
 	else if(cardObject.prices.eur != null){
 		cardPrice = cardPrice +	"€" + cardObject.prices.eur;
