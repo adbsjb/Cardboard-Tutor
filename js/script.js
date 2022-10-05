@@ -133,7 +133,7 @@ function clearFields(){
 	$("#myInput")[0].value = "";
 	$("#cardWrapper")[0].classList.add("invisible");
 	$("#cardWrapper")[0].classList.remove("visible");
-	currentCardObject = "";
+	currentCardObject = null;
 	$('#collapseRulings').collapse('hide');
 	$("#generalSearchResults")[0].innerHTML = "";
 	$("#generalInput")[0].value = "";
@@ -201,13 +201,13 @@ $("#myInput").keyup(function(event) {
 });	
 
 $('#checkBorder').click(function(event){
-	if(currentCardObject != ""){
+	if(currentCardObject != null){
 		populateCard(currentCardObject);
 	}
 });
 
 $('#checkImage').click(function(event){
-	if(currentCardObject != ""){
+	if(currentCardObject != null){
 		populateCard(currentCardObject);
 	}
 });
@@ -668,13 +668,17 @@ function populateCard(cardObject){
 
 	$("#cardWrapper")[0].classList.add("visible");
 	$("#cardWrapper")[0].classList.remove("invisible");
-	cardMarketDetails(cardObject);
-	edhRecDetails(cardObject);
-	getRulings(cardObject);
-	getSetIcon(cardObject, '#setImage');	
-	getRarity(cardObject, '#setImage');
-	$("#scryfall_Link")[0].href = cardObject.scryfall_uri;
-	$("#scryfall_Link")[0].innerHTML = "on Scryfall";
+	
+	if (cardObject.object == "card"){
+		cardMarketDetails(cardObject);
+		edhRecDetails(cardObject);
+		getRulings(cardObject);
+		getSetIcon(cardObject, '#setImage');	
+		getRarity(cardObject, '#setImage');
+		$("#scryfall_Link")[0].href = cardObject.scryfall_uri;
+		$("#scryfall_Link")[0].innerHTML = "on Scryfall";
+	}
+
 	if($("#checkBorder")[0].checked == true){
 		$("#cardWrapper")[0].classList.add(cardObject.border_color + "Border");
 	}
