@@ -18,6 +18,7 @@ function replaceSymbols(newString){
 	newString = newString.replace(/{E}/g, '<span class="energy"></span>');
 	newString = newString.replace(/{C}/g, '<span class="colourlessMana"></span>');
 	newString = newString.replace(/{A}/g, '<span class="acornCounter"></span>');
+	newString = newString.replace(/{P}/g, '<span class="pMana"></span>');
 	newString = newString.replace(/{HW}/g, '<span class="hwhiteMana"></span>');
 	newString = newString.replace(/{HU}/g, '<span class="hblueMana"></span>');
 	newString = newString.replace(/{HB}/g, '<span class="hblackMana"></span>');
@@ -39,6 +40,16 @@ function replaceSymbols(newString){
 	newString = newString.replace(/{B\/P}/g, '<span class="blackpMana"></span>');
 	newString = newString.replace(/{R\/P}/g, '<span class="redpMana"></span>');
 	newString = newString.replace(/{G\/P}/g, '<span class="greenpMana"></span>');
+	newString = newString.replace(/{B\/G\/P}/g, '<span class="blackGreenPMana"></span>');
+	newString = newString.replace(/{B\/R\/P}/g, '<span class="blackRedPMana"></span>');
+	newString = newString.replace(/{G\/U\/P}/g, '<span class="greenBluePMana"></span>');
+	newString = newString.replace(/{G\/W\/P}/g, '<span class="greenWhitePMana"></span>');
+	newString = newString.replace(/{R\/G\/P}/g, '<span class="redGreenPMana"></span>');
+	newString = newString.replace(/{R\/W\/P}/g, '<span class="redWhitePMana"></span>');
+	newString = newString.replace(/{U\/B\/P}/g, '<span class="blueBlackPMana"></span>');
+	newString = newString.replace(/{U\/R\/P}/g, '<span class="blueRedPMana"></span>');
+	newString = newString.replace(/{W\/B\/P}/g, '<span class="whiteBlackPMana"></span>');
+	newString = newString.replace(/{W\/U\/P}/g, '<span class="whiteBluePMana"></span>');
 	newString = newString.replace(/\{0\}/g, '<span class="zeroMana"></span>');
 	newString = newString.replace(/\{1\}/g, '<span class="oneMana"></span>');
 	newString = newString.replace(/\{2\}/g, '<span class="twoMana"></span>');
