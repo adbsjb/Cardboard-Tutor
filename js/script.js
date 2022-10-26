@@ -537,7 +537,7 @@ function getRarity(cardObject, imageDest){
 }
 
 function populateCard(cardObject){
-	if(cardObject.layout == "transform" || cardObject.layout == "modal_dfc"){
+	if(cardObject.layout == "transform" || cardObject.layout == "modal_dfc" || cardObject.layout == "double_faced_token"){
 		cardObject.card_faces[0].layout = "normal";
 		cardObject.card_faces[1].layout = "normal";
 		
