@@ -139,7 +139,6 @@ function clearFields(){
 	$("#rulingsWrapper")[0].classList.add("invisible");
 	$("#mcm_link")[0].innerHTML = "";
 	$("#edhRec_link")[0].innerHTML = "";
-	$("#edhRec_rank")[0].innerHTML = "";
 	$("#setDropdown")[0].innerHTML = "";
 	$("#myInput")[0].value = "";
 	$("#cardWrapper")[0].classList.add("invisible");
@@ -185,13 +184,6 @@ function edhRecDetails(cardObject){
 	if(cardObject.related_uris != null){
 		$('#edhRec_link')[0].href = cardObject.related_uris.edhrec;
 		$('#edhRec_link')[0].innerHTML = "on EDHRec";
-	}
-
-	if(cardObject.edhrec_rank != null){
-		$('#edhRec_rank')[0].innerHTML = "EDHRec Rank: " + cardObject.edhrec_rank;
-	}
-	else{
-		$('#edhRec_rank')[0].innerHTML = "EDHRec Rank: Unknown";
 	}
 }
 
