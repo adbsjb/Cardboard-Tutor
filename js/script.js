@@ -570,7 +570,7 @@ function populateCard(cardObject){
 		
 	}
 
-	else if(cardObject.layout == "split"){	
+	else if(cardObject.layout == "split" || cardObject.layout == "adventure"){	
 		var separator = "";
 		$("#name")[0].innerHTML = "";
 		$("#mana_cost")[0].innerHTML = "";
