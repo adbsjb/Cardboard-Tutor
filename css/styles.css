@@ -720,7 +720,7 @@
 				padding: 10px;
 			}
 			
-			#divCheckboxes{
+			#divCheckboxes, #divGeneralCheckboxes{
 				user-select: none;
 				-moz-user-select: none;				
 			}
@@ -837,6 +837,13 @@
 				height: 38px;	
 				vertical-align: middle;
 			}
+
+			#divGeneralCheckboxes{
+				height: 38px;	
+				vertical-align: middle;
+				display: inline-block;
+				margin-right: 30px;
+			}			
 			
 			#checkImage{
 				margin-left: 30px;

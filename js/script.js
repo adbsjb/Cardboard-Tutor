@@ -215,6 +215,13 @@ $('#checkImage').click(function(event){
 	}
 });
 
+$('#checkOnline').click(function(event){
+	if ($('#generalSearchResults')[0].innerHTML != ""){
+	//if search results != null{
+		loadGeneralSearch();
+	}
+});
+
 function namedSearch(){
 	enableTab(0);
 }
@@ -759,6 +766,11 @@ function loadGeneralSearch(){
 	var xhttp = new XMLHttpRequest();
 	var input = encodeURIComponent($("#generalInput")[0].value);
 	if(input != "" && input != null){
+		if($("#checkOnline")[0].checked == false){
+			//if online checkbox is unchecked, exclude online cards
+			input = input + " game:paper";
+		}
+
 		xhttp.open("GET", "https://api.scryfall.com/cards/search?q=" + input, true);
 		xhttp.send();
 	}
