@@ -878,6 +878,12 @@
 			#cardQuantity{
 				width: 40px;
 			}
+
+			#footer{
+				bottom: 0px;
+				right: 10px;
+				position: fixed;
+			}
 			
 			/* For Mobile */
 			
