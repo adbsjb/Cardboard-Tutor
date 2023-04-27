@@ -343,6 +343,7 @@ function autocompleteSetup(input){
 							var test = $("#myInput");
 							inputBox.value = this.innerText;
 							closeAllLists();
+							$('#btnRequestData').click();
 						});
 						a.appendChild(b);
 					}
