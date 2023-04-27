@@ -3,9 +3,14 @@ var currentCardObject;
 var divs = [];
 var allSets;
 var userDeckList = [];
+var allCards;
 autocompleteSetup($("#myInput")[0]);
 getSets();
 namedSearch()
+test = $('#useCached');
+if($('#useCached')[0].checked == true){
+	getCards();
+}
 
 function replaceSymbols(newString){
 	//replaces all references to symbols with actual symbols in given string
@@ -436,6 +441,24 @@ function getSets(){
 					allSets = allSets.data;
 				}
 			}	
+}
+
+function getCards(){
+	//gets uri for card array
+	var setHttp = new XMLHttpRequest();
+			setHttp.open("GET", "https://api.scryfall.com/bulk-data/oracle-cards", true);
+			setHttp.send();
+	
+			setHttp.onreadystatechange = function(){
+				if (setHttp.readyState == 4 && setHttp.status == 200) {
+					apiResponse = JSON.parse(setHttp.responseText)
+
+					//download cards.json and sets up card array for this session
+					fetch(apiResponse.download_uri)
+					.then((response) => response.json())
+					.then((json) => allCards = json);
+				}
+			}
 }
 
 function reprints(reprint){

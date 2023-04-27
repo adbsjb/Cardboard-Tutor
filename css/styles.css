@@ -720,7 +720,7 @@
 				padding: 10px;
 			}
 			
-			#divCheckboxes, #divGeneralCheckboxes{
+			.checkboxes{
 				user-select: none;
 				-moz-user-select: none;				
 			}

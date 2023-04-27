@@ -11,6 +11,18 @@
 		<link rel="shortcut icon" type="image/png" href="symbols/icon.png"/>	<!--Favicon made by Freepik (http://www.freepik.com) from Flaticon (https://www.flaticon.com/) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)-->
 	</head>
 	<body>
+		
+		<div style="display: block;" class="checkboxes">
+			<input id="useCached" type="checkbox" autocomplete="off" checked="true" onclick="useCached()">
+			<label for="useCached">Use Cached data</label>
+			<script>
+			function useCached(){
+			$('#useCached').attr("disabled", true);
+			getCards();
+			}
+			</script>
+		</div>
+	
 		<!--Navigation Buttons start-->
 		<div style="margin-bottom:10px;" class="btn-group" role="group" aria-label="Tabs">
 			<button id="btnNamed" type="button" class="btn btn-outline-dark active" onclick="namedSearch()">Named Search</button>
@@ -26,7 +38,7 @@
 				<div class="autocomplete">
 					<input id="myInput" type="search" value="">
 				</div>
-				<div id="divCheckboxes">
+				<div id="divCheckboxes" class="checkboxes">
 					<input id="checkBorder" type="checkbox">
 					<label for="checkBorder">Border</label>
 					<input id="checkImage" type="checkbox">
@@ -95,7 +107,7 @@
 				<div class="autocomplete">
 					<input id="generalInput" type="search" value="">
 				</div>
-				<div id="divGeneralCheckboxes">
+				<div id="divGeneralCheckboxes" class="checkboxes">
 					<input id="checkOnline" type="checkbox">
 					<label for="checkOnline">Include Alchemy</label>
 				</div>
