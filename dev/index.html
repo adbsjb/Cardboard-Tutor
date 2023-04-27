@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<title>Cardboard Tutor - Dev</title>
+		<link rel="shortcut icon" type="image/png" href="symbols/icon.png"/>	<!--Favicon made by Freepik (http://www.freepik.com) from Flaticon (https://www.flaticon.com/) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)-->
+	</head>
+	<body>
+		
+		<div style="display: block;" class="checkboxes">
+			<input id="useCached" type="checkbox" autocomplete="off" onclick="useCached()">
+			<label for="useCached">Use Cached data</label>
+			<script>
+			function useCached(){
+			$('#useCached').attr("disabled", true);
+			getCards();
+			}
+			</script>
+		</div>
+	
+		<!--Navigation Buttons start-->
+		<div style="margin-bottom:10px;" class="btn-group" role="group" aria-label="Tabs">
+			<button id="btnNamed" type="button" class="btn btn-outline-dark active" onclick="namedSearch()">Named Search</button>
+			<button id="btnGeneral" type="button" class="btn btn-outline-dark" onclick="generalSearch()">General Search</button>
+			<button id="btnList" type="button" class="btn btn-outline-dark" onclick="deckList()">Deck List</button>
+		</div>
+		<!--Navigation Buttons end-->
+
+		<!-- Named Search start -->
+		<div id=namedCollapse class="collapse">
+			<form id="inputForm" autocomplete="off" class="" onSubmit="return false;">
+
+				<div class="autocomplete">
+					<input id="myInput" type="search" value="">
+				</div>
+				<div id="divCheckboxes" class="checkboxes">
+					<input id="checkBorder" type="checkbox">
+					<label for="checkBorder">Border</label>
+					<input id="checkImage" type="checkbox">
+					<label for="checkImage">Image</label>
+				</div>
+				<div id="divButtons">
+					<button class="btn btn-outline-secondary" id="btnRequestData" type="button" onclick="loadDoc()">Request Data</button>
+					<button class="btn btn-outline-secondary" id="btnClear" type="button" onclick="clearFields()">Clear</button>
+				</div>
+			</form>
+			<div id="namedWrapper">
+				<div id="cardWrapper" class="noBorder">
+				<p id="name"></p>
+				<p id="mana_cost"></p>
+				<div id="cardImageBox">
+					<img id="cardImage">
+				</div>
+				<p id="type_line"></p>
+				<div id="setImageBox">
+					<div id="setImage"></div>
+					<div id="setDropdown">
+					</div>
+				</div>
+				<br>
+				<br>
+				<p id="oracle_text"></p>
+				<p id="flavor_text"></p>
+				<p id="artist"></p>
+				<p id="pt"></p>
+				</div>
+				<button id="flipButton" style="display: none" class="btn btn-outline-secondary" type="button" onclick="flip()">Flip</button>
+				<div id="scryfallLinkBox">
+					<a id="scryfall_Link" target="_blank"></a>
+				</div>
+				<br>
+				<div id="cardMarketWrapper">	
+					<a id="mcm_link" target="_blank"></a>
+					<p id="averagePrice"></p>
+				</div>
+				<div id="edhRecWrapper">
+					<a id="edhRec_link" target="_blank"></a>
+				</div>
+				<div id="rulingsWrapper" class="invisible">
+					<button id="rulingsButton" class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#collapseRulings" aria-expanded="false" aria-controls="collapseRulings">
+						Card Rulings
+					</button>
+					
+					<button id="deckListButton" class="btn btn-outline-secondary" type="button" onclick="addToDeckList()" data-toggle="collapse" aria-expanded="false" aria-controls="collapseRulings">
+						Add to decklist
+					</button>
+					<input id="cardQuantity" type="number" name="quantity" min="1" value="1">
+
+					<div class="collapse" id="collapseRulings">
+						<div id="rulings" class="card card-body">
+						</div>
+					</div>
+				</div>			
+			</div>
+		</div>
+		<!-- Named Search end -->
+
+		<!-- General Search start -->
+		<div id="searchCollapse" class="collapse">
+			<form id="generalInputForm" autocomplete="off" onSubmit="return false;">
+
+				<div class="autocomplete">
+					<input id="generalInput" type="search" value="">
+				</div>
+				<div id="divGeneralCheckboxes" class="checkboxes">
+					<input id="checkOnline" type="checkbox">
+					<label for="checkOnline">Include Alchemy</label>
+				</div>
+				<div id="divButtons">
+					<button class="btn btn-outline-secondary" id="btnLoadGeneralSearch" type="button" onclick="loadGeneralSearch()">Request Data</button>
+					<button class="btn btn-outline-secondary" id="btnClear" type="button" onclick="clearFields()">Clear</button>
+				</div>
+			</form>
+			<div id="generalSearchResults" class="card card-body">
+			</div>	
+		</div>
+		<!-- General Search end -->
+
+		<!-- Decklist start -->
+		<form id="deckList">
+			<div id="deckCollapse" class="collapse">
+				<div id="deckListResult" class="card card-body"> 
+				</div>					
+				<button id="btnExport" class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#exportCollapse" aria-expanded="false" aria-controls="exportCollapse">Export deck to txt</button>
+				<button id="btnClearList" class="btn btn-outline-secondary" type="button" onclick="clearDeckList()">Clear Deck List</button>
+				<div id="exportCollapse" class="collapse">
+					<textarea id="txtExport" readonly></textarea>
+				</div>
+			</div>
+		</form>
+		<!-- Decklist end -->
+
+
+		<script src="js/script.js"></script>
+		
+		
+		<footer id="footer">
+		<!-- Footer -->
+			<a href="https://github.com/adbsjb/Cardboard-Tutor" >Github</a>
+		</footer>
+
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-BN1E4ZJQ5F"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-BN1E4ZJQ5F');
+		</script>
+
+	</body>
+</html>
