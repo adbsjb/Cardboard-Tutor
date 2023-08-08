@@ -678,6 +678,10 @@ function populateCard(cardObject){
 			power = replaceSymbols(cardObject.loyalty);
 			toughness = "";
 		}
+        else if(cardObject.type_line.includes("Battle")){
+            power = replaceSymbols(cardObject.defense);
+            toughness = "";
+        }
 		else{
 			power = "";
 			toughness = "";
