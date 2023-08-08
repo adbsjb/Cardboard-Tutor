@@ -7,10 +7,10 @@ var allCards;
 autocompleteSetup($("#myInput")[0]);
 getSets();
 namedSearch()
-test = $('#useCached');
+/*test = $('#useCached');
 if($('#useCached')[0].checked == true){
 	getCards();
-}
+}*/
 
 function replaceSymbols(newString){
 	//replaces all references to symbols with actual symbols in given string
@@ -153,7 +153,6 @@ function clearFields(){
 	$("#generalSearchResults")[0].innerHTML = "";
 	$("#generalInput")[0].value = "";
 	$("#averagePrice")[0].innerHTML = "";
-	var test = $("#flipButton")[0].classList;
 	$('#flipButton')[0].style = "display:none";	
 }
 
@@ -340,7 +339,6 @@ function autocompleteSetup(input){
 						b.innerHTML = b.innerHTML.replace(caseCorrectInput, "<strong>" + caseCorrectInput + "</strong>")
 						b.innerHTML += "<input type='hidden' value='" + array.data[i] + "'>";
 						b.addEventListener("click", function(e) {
-							var test = $("#myInput");
 							inputBox.value = this.innerText;
 							closeAllLists();
 							$('#btnRequestData').click();
