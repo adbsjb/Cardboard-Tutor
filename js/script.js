@@ -7,7 +7,7 @@ var allCards;
 autocompleteSetup($("#myInput")[0]);
 getSets();
 namedSearch()
-/*test = $('#useCached');
+/*
 if($('#useCached')[0].checked == true){
 	getCards();
 }*/
