@@ -154,6 +154,7 @@ function clearFields() {
     $("#generalInput")[0].value = "";
     $("#averagePrice")[0].innerHTML = "";
     $('#flipButton')[0].style = "display:none";
+    $('#frame')[0].innerHTML = "";
 }
 
 function cardMarketDetails(cardObject) {
@@ -700,6 +701,7 @@ function populateCard(cardObject) {
         $("#cardWrapper")[0].classList.remove("invisible");
         $("#scryfall_Link")[0].href = cardObject.scryfall_uri;
         $("#scryfall_Link")[0].innerHTML = "on Scryfall";
+        $('#frame')[0].innerHTML = "Frame: " + cardObject.frame;
         return;
     }
 
@@ -714,6 +716,7 @@ function populateCard(cardObject) {
         getRarity(cardObject, '#setImage');
         $("#scryfall_Link")[0].href = cardObject.scryfall_uri;
         $("#scryfall_Link")[0].innerHTML = "on Scryfall";
+        $('#frame')[0].innerHTML = "Frame: " + cardObject.frame;
     }
 
     if ($("#checkBorder")[0].checked == true) {
