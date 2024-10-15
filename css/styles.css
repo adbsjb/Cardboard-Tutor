@@ -821,6 +821,10 @@
 				display: inline;
 				font-style: italic;
 			}
+
+            #frame{
+                display: inline;
+            }
 			
 			#pt{
 				float: right;
