@@ -576,6 +576,7 @@ function populateCard(cardObject) {
         getRarity(cardObject, '#setImage');
         $("#scryfall_Link")[0].href = cardObject.scryfall_uri;
         $("#scryfall_Link")[0].innerHTML = "on Scryfall";
+        $('#frame')[0].innerHTML = "Frame: " + cardObject.frame;
 
         $('#flipButton')[0].style = "";
 
