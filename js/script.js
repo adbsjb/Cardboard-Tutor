@@ -516,7 +516,6 @@ function getSetIcon(cardObject, imageDest) {
             lang = "[" + cardObject.lang.toUpperCase() + "]";
         }
         const setString = setObject.name + " (" + setObject.code.toUpperCase() + ") " + cardObject.collector_number + lang;
-        $(imageDest)[0].innerHTML = setString;
         $(imageDest)[0].title = setString;
         $(imageDest)[0].alt = setString;
         $(imageDest)[0].setAttribute("style", "-webkit-mask: url(" + setObject.icon_svg_uri + ") no-repeat 50% 50%; width:20px; height:20px;")
