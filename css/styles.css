@@ -156,8 +156,28 @@
     display: inline-block;
 }
 
-.pMana {
+.paw {
     background-image: url("../symbols/P.svg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 15px;
+    display: inline-block;
+    color: transparent;
+}
+
+.phyrexianMana {
+    background-image: url("../symbols/H.svg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 15px;
+    display: inline-block;
+    color: transparent;
+}
+
+.ticket {
+    background-image: url("../symbols/TK.svg");
     background-size: auto;
     background-repeat: no-repeat;
     height: 20px;
