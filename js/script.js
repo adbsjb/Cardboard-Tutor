@@ -515,8 +515,10 @@ function getSetIcon(cardObject, imageDest) {
         if (cardObject.lang != "en") {
             lang = "[" + cardObject.lang.toUpperCase() + "]";
         }
-        $(imageDest)[0].title = setObject.name + " (" + setObject.code.toUpperCase() + ") " + cardObject.collector_number + lang;
-        $(imageDest)[0].alt = setObject.code.toUpperCase();
+        const setString = setObject.name + " (" + setObject.code.toUpperCase() + ") " + cardObject.collector_number + lang;
+        $(imageDest)[0].innerHTML = setString;
+        $(imageDest)[0].title = setString;
+        $(imageDest)[0].alt = setString;
         $(imageDest)[0].setAttribute("style", "-webkit-mask: url(" + setObject.icon_svg_uri + ") no-repeat 50% 50%; width:20px; height:20px;")
     }
 
